@@ -52,6 +52,9 @@ group :development do
 
   # Ruby lint
   gem 'rubocop', '~> 0.59.2', require: false
+
+  # Rspec
+  gem 'rspec'
 end
 
 group :test do
