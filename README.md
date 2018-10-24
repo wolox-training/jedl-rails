@@ -1,5 +1,7 @@
 # Wbooks-Api
 
+[![Build Status](https://travis-ci.org/wolox-training/jedl-rails.svg?branch=master)](https://travis-ci.org/wolox-training/jedl-rails)
+
 This is an API where the user can see enabled books for rent, make rents, suggestions and select books for future readings.
 
 ## Getting Started
