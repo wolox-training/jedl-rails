@@ -4,7 +4,7 @@ This is an API where the user can see enabled books for rent, make rents, sugges
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Clone this repository on your local machine in standard way
 
 ### Prerequisites
 
@@ -15,29 +15,25 @@ You need to install
 - rails 5.2.1
 - postgresql 10.5 or superior
 
-On Mac
-
 ```
 Give examples
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Run bundle to install the dependencies
 
 ```
-Give the example
+$ bundle install
 ```
 
-And repeat
+## Running rubocop
+
+To check the ruby style on our code, run
 
 ```
-until finished
+bundle exec rubocop app -R
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
@@ -66,6 +62,10 @@ To execute this project please change to the directory when you clone this repo 
 ```
 $ rails serve
 ```
+
+## Check ruby style guide
+
+
 
 ## Deployment
 
