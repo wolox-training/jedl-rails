@@ -15,10 +15,6 @@ You need to install
 - rails 5.2.1
 - postgresql 10.5 or superior
 
-```
-Give examples
-```
-
 ### Installing
 
 Run bundle to install the dependencies
@@ -57,15 +53,11 @@ Give an example
 
 ## On development
 
-To execute this project please change to the directory when you clone this repo and write on console
+To execute this project please change to the directory where you clone this repo and write on console
 
 ```
 $ rails serve
 ```
-
-## Check ruby style guide
-
-
 
 ## Deployment
 
