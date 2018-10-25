@@ -69,3 +69,6 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'devise'
+
+# Generate token for auth
+gem 'devise_token_auth'
