@@ -63,6 +63,15 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+
+  # Clean database on test
+  gem 'database_cleaner'
+
+  # Fake data to test
+  gem 'faker'
+
+  # To create factories of models
+  gem 'factory_bot'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
