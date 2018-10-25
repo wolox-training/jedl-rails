@@ -86,8 +86,12 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise'
 
 # Generate token for auth
+<<<<<<< HEAD
 gem 'devise_token_auth'
 
 gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'wor-paginate'
+=======
+gem 'devise_token_auth'
+>>>>>>> UPDATE
