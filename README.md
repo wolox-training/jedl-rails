@@ -52,3 +52,12 @@ $ rails serve
 ## License
 
 wolox
+<<<<<<< HEAD
+=======
+
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
+>>>>>>> UPDATE
