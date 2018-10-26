@@ -10,8 +10,22 @@ describe Book do
   it { is_expected.to validate_presence_of(:title) }
   it { is_expected.to validate_presence_of(:editor) }
   it { is_expected.to validate_presence_of(:year) }
-  it { expect(book.year).to satisfy { |v| true if Integer(v) rescue false } }
-  it { expect(book.year).to satisfy { |v| v.size == 4 } }  
+  it {
+    expect(book.year).to satisfy do |v|
+      true if Integer(v)
+    rescue StandardError
+      false
+    end
+  }
+  it {
+    expect(book.year).to satisfy do |v|
+      v.size == 4
+    end
+  }
+end
+
+describe Book do
+  subject(:book) { build(:book) }
 
   describe '#save' do
     context 'With valid params' do
@@ -23,9 +37,9 @@ describe Book do
 
     let(:emptyBook) { Book.new }
     context 'With invalid params' do
-        it 'returns exception' do
-            expect { emptyBook.save! }.to raise_error(ActiveRecord::RecordInvalid)
-        end
+      it 'returns exception' do
+        expect { emptyBook.save! }.to raise_error(ActiveRecord::RecordInvalid)
+      end
     end
   end
 end
