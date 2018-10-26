@@ -7,4 +7,5 @@ class User < ApplicationRecord
   include DeviseTokenAuth::Concerns::User
 
   validates :password, confirmation: true
+  validates :first_name, :last_name, presence: true
 end
