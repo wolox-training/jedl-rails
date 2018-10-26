@@ -284,6 +284,9 @@ DEPENDENCIES
   devise
   devise_token_auth
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> UPDATE
   factory_bot_rails
   faker
 =======
