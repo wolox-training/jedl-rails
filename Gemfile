@@ -96,11 +96,18 @@ gem 'devise'
 
 # Generate token for auth
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> UPDATE
 gem 'devise_token_auth'
 
 gem 'active_model_serializers', '~> 0.10.0'
 
+<<<<<<< HEAD
 gem 'wor-paginate'
 =======
 gem 'devise_token_auth'
+>>>>>>> UPDATE
+=======
+gem 'wor-paginate'
 >>>>>>> UPDATE
