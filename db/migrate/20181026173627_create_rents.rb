@@ -15,8 +15,5 @@ class CreateRents < ActiveRecord::Migration[5.2]
         remove_reference :rents, :book, index: true, foreign_key: true
       end
     end
-
-    add_reference :rents, :user, foreign_key: true, null: false
-    add_reference :rents, :book, foreign_key: true, null: false
   end
 end
