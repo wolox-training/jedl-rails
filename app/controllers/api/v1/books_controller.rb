@@ -1,17 +1,21 @@
-class API::V1::BooksController < ApplicationController
-    include Wor::Paginate
+module API
+  module V1
+    class BooksController < ApplicationController
+      include Wor::Paginate
 
-    before_action :authenticate_user!
+      before_action :authenticate_user!
 
-    def index
-        books = Book.all()
+      def index
+        books = Book.all
 
         render_paginated books
-    end
+      end
 
-    def show
+      def show
         book = Book.find(params[:id])
 
         render json: book
+      end
     end
+  end
 end
