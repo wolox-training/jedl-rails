@@ -22,9 +22,15 @@ class User < ApplicationRecord
   validates :password, confirmation: true
   validates :first_name, :last_name, presence: true
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   has_many :rents, dependent: :destroy
   has_many :books, through: :rents
 =======
+>>>>>>> UPDATE
+=======
+
+  has_many :rents, dependent: :destroy
+  has_many :books, through: :rents
 >>>>>>> UPDATE
 end
