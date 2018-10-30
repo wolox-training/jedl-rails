@@ -149,8 +149,6 @@ describe API::V1::BooksController, type: :controller do
     end
 
     context 'When fetching an inexistent book' do
-      #let!(:book) { create(:book) }
-
       before do
         get :show, params: { id: 1 }
       end
