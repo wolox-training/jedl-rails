@@ -30,7 +30,7 @@ $ bundle install
 To check the ruby style on our code, run
 
 ```
-bundle exec rubocop app -R
+bundle exec rubocop app -R --format simple
 ```
 
 ## Running the tests

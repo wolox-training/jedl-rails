@@ -10,18 +10,18 @@ describe Book do
   it { is_expected.to validate_presence_of(:title) }
   it { is_expected.to validate_presence_of(:editor) }
   it { is_expected.to validate_presence_of(:year) }
-  it {
+  it do
     expect(book.year).to satisfy do |v|
       true if Integer(v)
     rescue StandardError
       false
     end
-  }
-  it {
+  end
+  it do
     expect(book.year).to satisfy do |v|
       v.size == 4
     end
-  }
+  end
 end
 
 describe Book do
