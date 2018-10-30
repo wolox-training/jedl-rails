@@ -15,7 +15,11 @@ describe Rent do
         expect(rent).to be_present
       end
     end
+  end
+end
 
+describe Rent do
+  describe '#save' do
     context 'With invalid params' do
       let(:withoutBookValue) { build(:rent, book: nil) }
       it 'returns invalid book value' do
@@ -27,12 +31,12 @@ describe Rent do
         expect(withoutUserValue).to be_invalid
       end
 
-      let(:withoutStartDateValue) { build(:rent, start_date: "") }
+      let(:withoutStartDateValue) { build(:rent, start_date: '') }
       it 'returns invalid start date value' do
         expect(withoutStartDateValue).to be_invalid
       end
 
-      let(:withoutEndDateValue) { build(:rent, end_date: "") }
+      let(:withoutEndDateValue) { build(:rent, end_date: '') }
       it 'returns invalid end date value' do
         expect(withoutEndDateValue).to be_invalid
       end
