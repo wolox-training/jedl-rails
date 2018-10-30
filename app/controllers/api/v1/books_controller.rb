@@ -8,13 +8,13 @@ module API
       def index
         books = Book.all
 
-        render_paginated books
+        render_paginated books, serializer: Books::IndexSerializer
       end
 
       def show
-        book = Book.find(params[:id])
+        book = Book.includes(:rents).find(params[:id])
 
-        render json: book
+        render json: book, serializer: Books::ShowSerializer
       end
     end
   end
