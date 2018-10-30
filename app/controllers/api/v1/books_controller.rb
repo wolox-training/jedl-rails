@@ -12,9 +12,13 @@ module API
       end
 
       def show
-        book = Book.find(params[:id])
+        begin
+          book = Book.find(params[:id])
 
-        render json: book
+          render json: book
+        rescue
+          render json: { error: "Book doesn't found" }
+        end
       end
     end
   end
