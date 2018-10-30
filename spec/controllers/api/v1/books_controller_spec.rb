@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 shared_context 'Authenticated User' do
-    let(:user) { create(:user) }
-  
-    before do
-      request.headers.merge! user.create_new_auth_token
-    end
+  let(:user) { create(:user) }
+
+  before do
+    request.headers.merge! user.create_new_auth_token
+  end
 end
 
 describe API::V1::BooksController, type: :controller do
@@ -31,6 +31,10 @@ describe API::V1::BooksController, type: :controller do
       end
     end
   end
+end
+
+describe API::V1::BooksController, type: :controller do
+  include_context 'Authenticated User'
 
   describe 'GET #show' do
     context 'When fetching a book' do
