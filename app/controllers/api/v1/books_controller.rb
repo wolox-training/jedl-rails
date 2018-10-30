@@ -10,8 +10,16 @@ module API
       end
 
       def show
+<<<<<<< HEAD
         book = Book.includes(:rents).find(params[:id])
         render json: book, serializer: Books::ShowSerializer
+=======
+        book = Book.find(params[:id])
+
+        render json: book
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: "Book doesn't found" }
+>>>>>>> UPDATE
       end
     end
   end
