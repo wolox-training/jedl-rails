@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2018_10_26_173627) do
   end
 
   create_table "rents", force: :cascade do |t|
-    t.date "start_date", default: "2018-10-29", null: false
-    t.date "end_date", default: "2018-10-29", null: false
+    t.date "start_date", default: "2018-10-30", null: false
+    t.date "end_date", default: "2018-10-30", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
