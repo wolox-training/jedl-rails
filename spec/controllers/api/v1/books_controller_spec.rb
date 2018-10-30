@@ -97,20 +97,6 @@ describe API::V1::BooksController, type: :controller do
         expect(response).to have_http_status(:ok)
       end
     end
-
-    context 'When fetching an inexistent book' do
-      before do
-        get :show, params: { id: 1 }
-      end
-
-      it 'responses with the book json' do
-        expect(response.body).to eq ({ error: "Book doesn't found" }).to_json
-      end
-
-      it 'responds with 200 status' do
-        expect(response).to have_http_status(:ok)
-      end
-    end
   end
 end
 
