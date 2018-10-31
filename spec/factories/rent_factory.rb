@@ -1,9 +1,9 @@
 require 'faker'
 
 FactoryBot.define do
-  factory :rent, class: Rent do
+  factory :rent do
     start_date { Time.zone.now }
-    end_date { Time.zone.now + (60 * 60 * 24) }
+    end_date { Time.zone.now + 24.hours }
     user
     book
   end
