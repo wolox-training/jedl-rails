@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'books', to: 'books#index'
       get 'books/:id', to: 'books#show'
+
+      get 'users/:user_id/rents', to: 'rents#index'
+
+      get 'users/:user_id/rents', to: 'rents#create'
     end
   end
 end
