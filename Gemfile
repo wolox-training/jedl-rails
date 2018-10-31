@@ -63,6 +63,21 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+
+  # Clean database on test
+  gem 'database_cleaner'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.8'
+  gem 'shoulda', '~> 3.5'
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
+
+  # Fake data to test
+  gem 'faker'
+
+  # To create factories of models
+  gem 'factory_bot_rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
