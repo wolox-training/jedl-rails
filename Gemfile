@@ -88,6 +88,6 @@ gem 'devise'
 # Generate token for auth
 gem 'devise_token_auth'
 
-gem 'active_model_serializers', '~> 0.10.0'
+gem 'active_model_serializers', '~> 0.10.0', require: true
 
 gem 'wor-paginate'
