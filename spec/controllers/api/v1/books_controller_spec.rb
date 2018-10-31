@@ -14,7 +14,7 @@ describe API::V1::BooksController, type: :controller do
 
       it 'responses with the books json' do
         expected = ActiveModel::Serializer::CollectionSerializer.new(
-          books, each_serializer: BookSerializer
+          books, serializer: Books::IndexSerializer
         ).to_json
         expect(response.body.to_json) =~ JSON.parse(expected)
       end
@@ -39,7 +39,7 @@ describe API::V1::BooksController, type: :controller do
 
       it 'responses with the books json' do
         expected = ActiveModel::Serializer::CollectionSerializer.new(
-          books, each_serializer: BookSerializer
+          books, serializer: Books::IndexSerializer
         ).to_json
         expect(response.body.to_json) =~ JSON.parse(expected)
       end
@@ -64,7 +64,7 @@ describe API::V1::BooksController, type: :controller do
 
       it 'responses with the empty pager json' do
         expected = ActiveModel::Serializer::CollectionSerializer.new(
-          books, each_serializer: BookSerializer
+          books, serializer: Books::IndexSerializer
         ).to_json
         expect(response.body.to_json) =~ JSON.parse(expected)
       end
@@ -88,7 +88,7 @@ describe API::V1::BooksController, type: :controller do
       end
 
       it 'responses with the book json' do
-        expect(response.body).to eq BookSerializer.new(
+        expect(response.body).to eq Books::ShowSerializer.new(
           book, root: false
         ).to_json
       end
