@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :books, only: %I[index show]
+
+      get 'users/:user_id/rents', to: 'rents#index'
+
+      get 'users/:user_id/rents', to: 'rents#create'
     end
   end
 end
