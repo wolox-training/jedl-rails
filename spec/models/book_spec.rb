@@ -10,18 +10,8 @@ describe Book do
   it { is_expected.to validate_presence_of(:title) }
   it { is_expected.to validate_presence_of(:editor) }
   it { is_expected.to validate_presence_of(:year) }
-  it do
-    expect(book.year).to satisfy do |v|
-      true if Integer(v)
-    rescue StandardError
-      false
-    end
-  end
-  it do
-    expect(book.year).to satisfy do |v|
-      v.size == 4
-    end
-  end
+  it { is_expected.to validate_numericality_of(:year).only_integer }
+  it { is_expected.to validate_length_of(:year).is_equal_to(4) }
 end
 
 describe Book do
