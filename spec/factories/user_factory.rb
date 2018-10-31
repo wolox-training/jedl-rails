@@ -1,7 +1,7 @@
 require 'faker'
 
 FactoryBot.define do
-  factory :user, class: User do
+  factory :user do
     password = Faker::Internet.password(8)
 
     first_name { Faker::Name.first_name }
