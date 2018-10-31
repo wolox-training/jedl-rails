@@ -105,13 +105,14 @@ describe API::V1::BooksController, type: :controller do
 
   describe 'GET #show' do
     context 'When fetching an inexistent book' do
+      subject { { error: "Book doesn't found" } }
+
       before do
         get :show, params: { id: 1 }
       end
 
       it 'responses with the book json' do
-        error = { error: "Book doesn't found" }
-        expect(response.body).to eq error.to_json
+        expect(response.body).to eq subject.to_json
       end
 
       it 'responds with 200 status' do
