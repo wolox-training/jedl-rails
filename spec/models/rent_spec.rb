@@ -7,15 +7,6 @@ describe Rent do
   it { is_expected.to validate_presence_of(:end_date) }
   it { is_expected.to validate_presence_of(:book) }
   it { is_expected.to validate_presence_of(:user) }
-
-  describe '#save' do
-    context 'With valid params' do
-      it 'returns the new rent object' do
-        rent.save!
-        expect(rent).to be_present
-      end
-    end
-  end
 end
 
 describe Rent do
