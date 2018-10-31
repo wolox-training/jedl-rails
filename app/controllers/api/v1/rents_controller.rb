@@ -8,9 +8,8 @@ module API
             @user = nil
 
             def index
-                rents = Rent.includes(:user).where(user: @user)
-
-                render_paginated rents
+                rents = Rent.includes(:user, :book).where(user: @user)
+                render_paginated rents, serializer: Rents::IndexSerializer
             end
 
             private
