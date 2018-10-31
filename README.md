@@ -25,7 +25,7 @@ Run bundle to install the dependencies
 $ bundle install
 ```
 
-## Running rubocop
+## Running coding style test
 
 To check the ruby style on our code, run
 
@@ -35,22 +35,10 @@ bundle exec rubocop app -R
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Running test
 
 ```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
+bundle exec rspec spec -fd
 ```
 
 ## On development
@@ -87,7 +75,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+wolox
 
 ## Acknowledgments
 
