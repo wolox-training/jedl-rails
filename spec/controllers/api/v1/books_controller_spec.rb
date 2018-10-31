@@ -1,12 +1,5 @@
 require 'rails_helper'
-
-shared_context 'Authenticated User' do
-  let(:user) { create(:user) }
-
-  before do
-    request.headers.merge! user.create_new_auth_token
-  end
-end
+require './spec/helpers/authenticate_helper'
 
 describe API::V1::BooksController, type: :controller do
   include_context 'Authenticated User'

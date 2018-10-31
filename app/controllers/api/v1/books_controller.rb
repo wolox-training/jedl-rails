@@ -5,21 +5,17 @@ module API
 
       before_action :authenticate_user!
 
+      rescue_from ActiveRecord::RecordNotFound do
+        render json: { error: "Book doesn't found" }
+      end
+
       def index
         render_paginated Book, serializer: Books::IndexSerializer
       end
 
       def show
-<<<<<<< HEAD
         book = Book.includes(:rents).find(params[:id])
         render json: book, serializer: Books::ShowSerializer
-=======
-        book = Book.find(params[:id])
-
-        render json: book
-      rescue ActiveRecord::RecordNotFound
-        render json: { error: "Book doesn't found" }
->>>>>>> UPDATE
       end
     end
   end
