@@ -105,7 +105,7 @@ describe API::V1::BooksController, type: :controller do
 
   describe 'GET #show' do
     context 'When fetching an inexistent book' do
-      subject { { error: "Book doesn't found" } }
+      subject { { error: "Couldn't find Book with 'id'=1" } }
 
       before do
         get :show, params: { id: 1 }
@@ -116,7 +116,7 @@ describe API::V1::BooksController, type: :controller do
       end
 
       it 'responds with 200 status' do
-        expect(response).to have_http_status(:ok)
+        expect(response).to have_http_status(:not_found)
       end
     end
   end

@@ -101,7 +101,7 @@ gem 'devise'
 >>>>>>> UPDATE
 gem 'devise_token_auth'
 
-gem 'active_model_serializers', '~> 0.10.0'
+gem 'active_model_serializers', '~> 0.10.0', require: true
 
 <<<<<<< HEAD
 gem 'wor-paginate'
