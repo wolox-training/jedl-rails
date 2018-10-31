@@ -5,6 +5,10 @@ module API
 
       before_action :authenticate_user!
 
+      rescue_from ActiveRecord::RecordNotFound do
+        render json: { error: "Book doesn't found" }
+      end
+
       def index
         books = Book.all
 
@@ -15,8 +19,6 @@ module API
         book = Book.find(params[:id])
 
         render json: book
-      rescue ActiveRecord::RecordNotFound
-        render json: { error: "Book doesn't found" }
       end
     end
   end
