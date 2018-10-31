@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_10_26_173627) do
     t.index ["book_id"], name: "index_rents_on_book_id"
     t.index ["user_id"], name: "index_rents_on_user_id"
   end
-
+  
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
