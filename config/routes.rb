@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :books, only: %I[index show]
 
-      get 'users/:user_id/rents', to: 'rents#index'
-      post 'users/:user_id/rents', to: 'rents#create'
+      scope 'users/:user_id' do
+        resources :rents, only: [:index, :create]
+      end
     end
   end
 end
