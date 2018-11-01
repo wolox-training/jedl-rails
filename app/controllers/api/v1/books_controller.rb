@@ -6,17 +6,12 @@ module API
       before_action :authenticate_user!
 
       def index
-        books = Book.all
-
-        render_paginated books
+        render_paginated Book, serializer: Books::IndexSerializer
       end
 
       def show
-        book = Book.find(params[:id])
-
-        render json: book
-      rescue ActiveRecord::RecordNotFound
-        render json: { error: "Book doesn't found" }
+        book = Book.includes(:rents).find(params[:id])
+        render json: book, serializer: Books::ShowSerializer
       end
     end
   end

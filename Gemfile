@@ -66,18 +66,18 @@ group :test do
 
   # Clean database on test
   gem 'database_cleaner'
-
-  # Fake data to test
-  gem 'faker'
-
-  # To create factories of models
-  gem 'factory_bot_rails'
 end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'shoulda', '~> 3.5'
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
+
+  # Fake data to test
+  gem 'faker'
+
+  # To create factories of models
+  gem 'factory_bot_rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -88,6 +88,6 @@ gem 'devise'
 # Generate token for auth
 gem 'devise_token_auth'
 
-gem 'active_model_serializers', '~> 0.10.0'
+gem 'active_model_serializers', '~> 0.10.0', require: true
 
 gem 'wor-paginate'

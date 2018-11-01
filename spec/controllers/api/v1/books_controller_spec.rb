@@ -1,12 +1,5 @@
 require 'rails_helper'
-
-shared_context 'Authenticated User' do
-  let(:user) { create(:user) }
-
-  before do
-    request.headers.merge! user.create_new_auth_token
-  end
-end
+require './spec/helpers/authenticate_helper'
 
 describe API::V1::BooksController, type: :controller do
   include_context 'Authenticated User'
@@ -21,7 +14,7 @@ describe API::V1::BooksController, type: :controller do
 
       it 'responses with the books json' do
         expected = ActiveModel::Serializer::CollectionSerializer.new(
-          books, each_serializer: BookSerializer
+          books, serializer: Books::IndexSerializer
         ).to_json
         expect(response.body.to_json) =~ JSON.parse(expected)
       end
@@ -46,7 +39,7 @@ describe API::V1::BooksController, type: :controller do
 
       it 'responses with the books json' do
         expected = ActiveModel::Serializer::CollectionSerializer.new(
-          books, each_serializer: BookSerializer
+          books, serializer: Books::IndexSerializer
         ).to_json
         expect(response.body.to_json) =~ JSON.parse(expected)
       end
@@ -71,7 +64,7 @@ describe API::V1::BooksController, type: :controller do
 
       it 'responses with the empty pager json' do
         expected = ActiveModel::Serializer::CollectionSerializer.new(
-          books, each_serializer: BookSerializer
+          books, serializer: Books::IndexSerializer
         ).to_json
         expect(response.body.to_json) =~ JSON.parse(expected)
       end
@@ -95,7 +88,7 @@ describe API::V1::BooksController, type: :controller do
       end
 
       it 'responses with the book json' do
-        expect(response.body).to eq BookSerializer.new(
+        expect(response.body).to eq Books::ShowSerializer.new(
           book, root: false
         ).to_json
       end
@@ -116,13 +109,8 @@ describe API::V1::BooksController, type: :controller do
         get :show, params: { id: 1 }
       end
 
-      it 'responses with the book json' do
-        error = { error: "Book doesn't found" }
-        expect(response.body).to eq error.to_json
-      end
-
-      it 'responds with 200 status' do
-        expect(response).to have_http_status(:ok)
+      it 'responds with 404 status' do
+        expect(response).to have_http_status(:not_found)
       end
     end
   end

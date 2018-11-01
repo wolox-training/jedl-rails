@@ -5,11 +5,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get 'books', to: 'books#index'
-      get 'books/:id', to: 'books#show'
+      resources :books, only: %I[index show]
 
       scope 'users/:user_id' do
-        resources :rents, only: [:index, :create]
+        resources :rents, only: %I[:index, :create]
       end
     end
   end
