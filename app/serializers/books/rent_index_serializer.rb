@@ -1,5 +1,5 @@
 module Books
-  class BasicShowSerializer < ActiveModel::Serializer
+  class RentIndexSerializer < ActiveModel::Serializer
     attributes :id, :author, :title, :genre, :publisher, :year, :image_url
 
     def image_url

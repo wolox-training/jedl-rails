@@ -8,8 +8,7 @@ Rails.application.routes.draw do
       resources :books, only: %I[index show]
 
       get 'users/:user_id/rents', to: 'rents#index'
-
-      get 'users/:user_id/rents', to: 'rents#create'
+      post 'users/:user_id/rents', to: 'rents#create'
     end
   end
 end
