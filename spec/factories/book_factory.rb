@@ -1,7 +1,7 @@
 require 'faker'
 
 FactoryBot.define do
-  factory :book, class: Book do
+  factory :book do
     genre { Faker::Book.genre }
     author { Faker::Book.author }
     image { Faker::Simpsons.quote }
