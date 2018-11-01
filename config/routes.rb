@@ -8,8 +8,9 @@ Rails.application.routes.draw do
       get 'books', to: 'books#index'
       get 'books/:id', to: 'books#show'
 
-      get 'users/:user_id/rents', to: 'rents#index'
-      post 'users/:user_id/rents', to: 'rents#create'
+      scope 'users/:user_id' do
+        resources :rents, only: [:index, :create]
+      end
     end
   end
 end
