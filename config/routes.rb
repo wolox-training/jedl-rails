@@ -9,8 +9,7 @@ Rails.application.routes.draw do
       get 'books/:id', to: 'books#show'
 
       get 'users/:user_id/rents', to: 'rents#index'
-
-      get 'users/:user_id/rents', to: 'rents#create'
+      post 'users/:user_id/rents', to: 'rents#create'
     end
   end
 end
