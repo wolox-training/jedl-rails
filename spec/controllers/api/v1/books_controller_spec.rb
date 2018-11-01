@@ -105,14 +105,14 @@ describe API::V1::BooksController, type: :controller do
 
   describe 'GET #show' do
     context 'When fetching an inexistent book' do
-      subject { { error: "Couldn't find Book with 'id'=1" } }
+      subject (:error_message) { { error: "Couldn't find Book with 'id'=1" } }
 
       before do
         get :show, params: { id: 1 }
       end
 
       it 'responses with the book json' do
-        expect(response.body).to eq subject.to_json
+        expect(response.body).to eq error_message.to_json
       end
 
       it 'responds with 200 status' do
