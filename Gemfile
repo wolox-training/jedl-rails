@@ -78,15 +78,6 @@ group :development, :test do
 
   # To create factories of models
   gem 'factory_bot_rails'
-<<<<<<< HEAD
-=======
-end
-
-group :development, :test do
-  gem 'rspec-rails', '~> 3.8'
-  gem 'shoulda', '~> 3.5'
-  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
->>>>>>> UPDATE
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -95,19 +86,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise'
 
 # Generate token for auth
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> UPDATE
 gem 'devise_token_auth'
 
 gem 'active_model_serializers', '~> 0.10.0', require: true
 
-<<<<<<< HEAD
 gem 'wor-paginate'
-=======
-gem 'devise_token_auth'
->>>>>>> UPDATE
-=======
-gem 'wor-paginate'
->>>>>>> UPDATE
