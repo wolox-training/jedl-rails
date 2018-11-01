@@ -2,7 +2,7 @@ module API
   module V1
     class RentsController < ApplicationController
       include Wor::Paginate
-      
+
       before_action :authenticate_user!, :find_user
 
       @user = nil
@@ -15,18 +15,12 @@ module API
       end
 
       def create
-        rent = Rent.create(
-          user_id: params[:rent][:user_id],
-          book_id: params[:rent][:book_id],
-          start_date: params[:rent][:from],
-          end_date: params[:rent][:to],
-          returned_at: params[:rent][:returned_at]
-        )
-        
+        rent = Rent.create(parse_create_rent)
+
         if rent.valid?
-            render json: rent, serializer: Rents::CreateSerializer
+          render json: rent, serializer: Rents::CreateSerializer
         else
-            render json: rent.errors
+          render json: rent.errors
         end
       end
 
@@ -34,6 +28,13 @@ module API
 
       def find_user
         @user = User.find(params[:user_id])
+      end
+
+      def parse_create_rent
+        rent = params[:rent].clone
+        rent[:start_date] = rent.delete :from
+        rent[:end_date] = rent.delete :to
+        rent.permit!
       end
     end
   end
