@@ -3,7 +3,6 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[5.2]
     
     create_table(:users) do |t|
       ## Required
-<<<<<<< HEAD
       t.string :provider, null: false, default: "email"
       t.string :uid, null: false, default: ""
 
@@ -14,28 +13,12 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[5.2]
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
       t.boolean  :allow_password_change, default: false
-=======
-      t.string :provider, :null => false, :default => "email"
-      t.string :uid, :null => false, :default => ""
-
-      ## Database authenticatable
-      t.string :encrypted_password, :null => false, :default => ""
-
-      ## Recoverable
-      t.string   :reset_password_token
-      t.datetime :reset_password_sent_at
-      t.boolean  :allow_password_change, :default => false
->>>>>>> UPDATE
 
       ## Rememberable
       t.datetime :remember_created_at
 
       ## Trackable
-<<<<<<< HEAD
       t.integer  :sign_in_count, default: 0, null: false
-=======
-      t.integer  :sign_in_count, :default => 0, :null => false
->>>>>>> UPDATE
       t.datetime :current_sign_in_at
       t.datetime :last_sign_in_at
       t.string   :current_sign_in_ip
@@ -47,19 +30,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[5.2]
       t.datetime :confirmation_sent_at
       t.string   :unconfirmed_email # Only if using reconfirmable
 
-<<<<<<< HEAD
       ## User info
-=======
-      ## Lockable
-      # t.integer  :failed_attempts, :default => 0, :null => false # Only if lock strategy is :failed_attempts
-      # t.string   :unlock_token # Only if unlock strategy is :email or :both
-      # t.datetime :locked_at
-
-      ## User Info
-      # t.string :name
-      # t.string :nickname
-      # t.string :image
->>>>>>> UPDATE
       t.string :email, null: false, default: ""
 
       t.string :first_name, null: false, default: ""
@@ -75,9 +46,5 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[5.2]
     add_index :users, [:uid, :provider],     unique: true
     add_index :users, :reset_password_token, unique: true
     add_index :users, :confirmation_token,   unique: true
-<<<<<<< HEAD
-=======
-    # add_index :users, :unlock_token,       unique: true
->>>>>>> UPDATE
   end
 end
