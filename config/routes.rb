@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :books, only: %I[index show]
 
       scope 'users/:user_id' do
-        resources :rents, only: [:index, :create]
+        resources :rents, only: %I[index create]
       end
     end
   end
