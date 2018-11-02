@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+# Environment variable
+gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record
@@ -82,12 +84,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
+# Auth
 gem 'devise'
-
 # Generate token for auth
 gem 'devise_token_auth'
-
+# Serialize responses
 gem 'active_model_serializers', '~> 0.10.0', require: true
-
+# Paginate responses
 gem 'wor-paginate'
+# Worker jobs
+gem 'sidekiq'
