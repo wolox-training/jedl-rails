@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2018_11_01_153344) do
   end
 
   create_table "rents", force: :cascade do |t|
-    t.date "start_date", default: "2018-11-01", null: false
-    t.date "end_date", default: "2018-11-01", null: false
+    t.date "start_date", default: "2018-11-02", null: false
+    t.date "end_date", default: "2018-11-02", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_11_01_153344) do
     t.index ["book_id"], name: "index_rents_on_book_id"
     t.index ["user_id"], name: "index_rents_on_user_id"
   end
-  
+
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false

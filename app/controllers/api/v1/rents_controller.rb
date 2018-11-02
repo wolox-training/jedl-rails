@@ -7,8 +7,6 @@ module API
 
       @user = nil
 
-      @book = nil
-
       def index
         rents = Rent.where(user: @user)
         render_paginated rents, each_serializer: Rents::IndexSerializer
@@ -18,7 +16,7 @@ module API
         rent = Rent.create(parse_create_rent)
 
         if rent.valid?
-          render json: rent, serializer: Rents::CreateSerializer
+          render json: rent, serializer: Rents::CreateSerializer, status: :created
         else
           render json: rent.errors
         end
