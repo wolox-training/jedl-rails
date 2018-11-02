@@ -13,9 +13,10 @@ module API
       end
 
       def create
-        rent = Rent.create(parse_create_rent)
+        rent = Rent.new(parse_create_rent)
 
-        if rent.valid?
+        if rent.save
+          SendMailWorker.perform_async(rent.id)
           render json: rent, serializer: Rents::CreateSerializer, status: :created
         else
           render json: rent.errors
