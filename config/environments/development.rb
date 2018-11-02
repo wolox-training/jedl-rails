@@ -64,11 +64,11 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => Rails.application.secrets.user_name,
-    :password => Rails.application.secrets.password,
-    :address => Rails.application.secrets.address,
-    :domain => Rails.application.secrets.domain,
-    :port => Rails.application.secrets.port,
-    :authentication => Rails.application.secrets.authentication
+    :user_name => JedlRails::Application.secrets.mail_user_name,
+    :password => JedlRails::Application.secrets.mail_password,
+    :address => JedlRails::Application.secrets.mail_address,
+    :domain => JedlRails::Application.secrets.mail_domain,
+    :port => JedlRails::Application.secrets.mail_port.to_s,
+    :authentication => JedlRails::Application.secrets.mail_authentication.to_sym
   }
 end
