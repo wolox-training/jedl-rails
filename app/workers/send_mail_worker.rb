@@ -1,9 +1,9 @@
 class SendMailWorker
-    include Sidekiq::Worker
+  include Sidekiq::Worker
 
-    def perform(rent_id)
-        puts "Sending email..."
-        RentCreatedMailer.created(rent_id).deliver_now
-        puts "Finish."
-    end
+  def perform(rent_id)
+    logger.info 'Sending email...'
+    RentCreatedMailer.created(rent_id).deliver_now
+    logger.info 'Finish.'
+  end
 end
