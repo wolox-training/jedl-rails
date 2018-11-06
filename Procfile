@@ -1,1 +1,1 @@
-wbooksapi: bundle exec sidekiq c -2
+wbooksapi: bundle exec sidekiq -c 2
