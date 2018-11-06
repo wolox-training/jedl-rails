@@ -11,14 +11,15 @@ module API
       end
 
       def create
-        rent = Rent.new(params.require(:rent)
-                        .permit(:start_date, :end_date, :book_id, :user_id, :returned_at))
+        rent = Rent.create!(rent_params)
+        render json: rent, serializer: Rents::CreateSerializer, status: :created
+      end
 
-        if rent.save
-          render json: rent, serializer: Rents::CreateSerializer, status: :created
-        else
-          render json: rent.errors
-        end
+      private
+
+      def rent_params
+        params.require(:rent)
+              .permit(:start_date, :end_date, :book_id, :user_id, :returned_at)
       end
     end
   end
