@@ -11,6 +11,12 @@ env:
     - RUBY_GC_MALLOC_LIMIT=90000000
     - RUBY_GC_HEAP_FREE_SLOTS=200000
     - SECURITY_SECRET_TOKEN=traviscitraviscitraviscitraviscitravisci
+    - MAIL_USER_NAME=35fc9b323b11c9
+    - MAIL_PASSWORD=70f57e1868c750
+    - MAIL_ADDRESS=smtp.mailtrap.io
+    - MAIL_DOMAIN=smtp.mailtrap.io
+    - MAIL_PORT=2525
+    - MAIL_AUTHENTICATION=cram_md5
 
 services:
   - postgresql
