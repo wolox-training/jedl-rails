@@ -12,12 +12,12 @@ module Users
     end
 
     def comments_counter
-      #TODO, change this value when comments are added
+      # TODO, change this value when comments are added
       0
     end
 
     def unread_notifications_count
-      #TODO, change this value when notifications are added
+      # TODO, change this value when notifications are added
       0
     end
   end
