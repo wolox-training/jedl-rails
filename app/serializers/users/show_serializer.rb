@@ -8,14 +8,16 @@ module Users
     end
 
     def rents_counter
-      0
+      object.rents.count
     end
 
     def comments_counter
+      #TODO, change this value when comments are added
       0
     end
 
     def unread_notifications_count
+      #TODO, change this value when notifications are added
       0
     end
   end
