@@ -9,9 +9,5 @@ module Rents
     def to
       object.end_date
     end
-
-    def returned_at
-      nil
-    end
   end
 end

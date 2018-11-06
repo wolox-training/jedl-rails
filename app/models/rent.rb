@@ -1,8 +1,6 @@
 class Rent < ApplicationRecord
-  include ActiveModel::Validations
-
   validates_with StartEndDateValidator
-  validates :start_date, :end_date, :book, :user, presence: true
+  validates :start_date, :end_date, :user, :book, presence: true
 
   belongs_to :book
   belongs_to :user

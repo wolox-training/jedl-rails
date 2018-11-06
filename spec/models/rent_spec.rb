@@ -12,24 +12,28 @@ end
 describe Rent do
   describe '#save' do
     context 'With invalid params' do
-      let(:withoutBookValue) { build(:rent, book: nil) }
+      let(:wihtout_book_value) { build(:rent, book: nil) }
+
       it 'returns invalid book value' do
-        expect(withoutBookValue).to be_invalid
+        expect(wihtout_book_value).to be_invalid
       end
 
-      let(:withoutUserValue) { build(:rent, user: nil) }
+      let(:without_user_value) { build(:rent, user: nil) }
+
       it 'returns invalid user value' do
-        expect(withoutUserValue).to be_invalid
+        expect(without_user_value).to be_invalid
       end
 
-      let(:withoutStartDateValue) { build(:rent, start_date: '') }
+      let(:without_start_date) { build(:rent, start_date: '') }
+
       it 'returns invalid start date value' do
-        expect(withoutStartDateValue).to be_invalid
+        expect(without_start_date).to be_invalid
       end
 
-      let(:withoutEndDateValue) { build(:rent, end_date: '') }
+      let(:without_end_date) { build(:rent, end_date: '') }
+
       it 'returns invalid end date value' do
-        expect(withoutEndDateValue).to be_invalid
+        expect(without_end_date).to be_invalid
       end
     end
   end

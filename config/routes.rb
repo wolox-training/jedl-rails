@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :books, only: %I[index show]
+
+      resources :users, only: [] do
+        resources :rents, only: %I[index create]
+      end
     end
   end
 end
