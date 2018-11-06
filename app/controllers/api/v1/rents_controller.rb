@@ -3,37 +3,23 @@ module API
     class RentsController < ApplicationController
       include Wor::Paginate
 
-      before_action :authenticate_user!, :find_user
-
-      @user = nil
+      before_action :authenticate_user!
 
       def index
-        rents = Rent.where(user: @user)
+        rents = Rent.where(user: params[:user_id])
         render_paginated rents, each_serializer: Rents::IndexSerializer
       end
 
       def create
-        rent = Rent.new(parse_create_rent)
-
-        if rent.save
-          SendMailWorker.perform_async(rent.id)
-          render json: rent, serializer: Rents::CreateSerializer, status: :created
-        else
-          render json: rent.errors
-        end
+        rent = Rent.create!(rent_params)
+        render json: rent, serializer: Rents::CreateSerializer, status: :created
       end
 
       private
 
-      def find_user
-        @user = User.find(params[:user_id])
-      end
-
-      def parse_create_rent
-        rent = params[:rent].clone
-        rent[:start_date] = rent.delete :from
-        rent[:end_date] = rent.delete :to
-        rent.permit!
+      def rent_params
+        params.require(:rent)
+              .permit(:start_date, :end_date, :book_id, :user_id, :returned_at)
       end
     end
   end

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :books, only: %I[index show]
 
-      scope 'users/:user_id' do
+      resources :users, only: [] do
         resources :rents, only: %I[index create]
       end
     end
