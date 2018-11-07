@@ -1,0 +1,11 @@
+es:
+  lead: "Queremos que tengas todos los datos de las rentas en tu correo electrónico, entonces te enviamos esta información."
+  creation_date: "Fecha de creación"
+  from: "desde"
+  to: "hasta"
+  callout: "Por favor haznos saber si estos datos son incorrectos."
+  contact_info: "Información de contacto"
+  connect_with_us: "Conectate con nosotros"
+  hi: "Hola"
+  book_details: "Detalles del libro"
+  subject_email: "Datos del préstamo"
