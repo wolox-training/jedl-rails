@@ -12,6 +12,6 @@ class RentCreatedMailer < ApplicationMailer
   private
 
   def set_locale
-    @current_rent.user.try(:locale) || I18n.locale_default
+    @current_rent.user&.locale || I18n.locale_default
   end
 end
