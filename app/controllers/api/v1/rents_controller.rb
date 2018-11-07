@@ -1,6 +1,6 @@
 module API
   module V1
-    class RentsController < ApplicationController
+    class RentsController < ApiController
       include Wor::Paginate
 
       before_action :authenticate_user!
