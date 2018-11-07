@@ -10,6 +10,8 @@ class User < ApplicationRecord
   validates :password, confirmation: true
   validates :first_name, :last_name, presence: true
 
+  enum locale: { es: "es", en: "en" }
+
   has_many :rents, dependent: :destroy
   has_many :books, through: :rents
 end
