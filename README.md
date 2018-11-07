@@ -16,6 +16,7 @@ You need to install
 - ruby 2.5.3
 - rails 5.2.1
 - postgresql 10.5 or superior
+- redis
 
 ### Installing
 
