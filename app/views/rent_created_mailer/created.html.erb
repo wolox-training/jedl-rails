@@ -36,14 +36,14 @@
           <table>
             <tr>
               <td>
-                <h3>Hi, <%= @current_rent.user.first_name %></h3>
-                <p class="lead">We want you have all your rent data in your email, so we send you this information.</p>
+                <h3><%= I18n.t :hi %>, <%= @current_rent.user.first_name %></h3>
+                <p class="lead"><%= I18n.t :lead %></p>
                 <table>
                   <thead>
                     <tr>
-                      <td><strong>Creation date</strong></td>
-                      <td><strong>from</strong></td>
-                      <td><strong>to</strong></td>
+                      <td><strong><%= I18n.t :creation_date %></strong></td>
+                      <td><strong><%= I18n.t :from %></strong></td>
+                      <td><strong><%= I18n.t :to %></strong></td>
                     </tr>
                   </thead>
                   <tbody>
@@ -56,14 +56,14 @@
                 </table>
                 </br>
                 <p>
-                  Book details:
+                  <%= I18n.t :book_details %>
                   <h2 style="margin-bottom: 0px;"><%= @current_rent.book.title %></h2></br>
                   <h3 style="margin-bottom: 0px;"><%= @current_rent.book.author %></h3></br>
                   <%= @current_rent.book.genre %></br>
                   <%= @current_rent.book.editor %></br>
                 </p>
                 <p class="callout">
-                  Please let us know if this data is incorrect.
+                  <%= I18n.t :callout %>
                 </p>        
                 <table class="social" width="100%">
                   <tr>
@@ -71,7 +71,7 @@
                       <table align="left" class="column">
                         <tr>
                           <td>				
-                            <h5 class="">Connect with Us:</h5>
+                            <h5 class=""><%= I18n.t :connect_with_us %>:</h5>
                             <p class="">
                               <a href="www.facebook.com" class="soc-btn fb">Facebook</a>
                               <a href="www.twitter.com" class="soc-btn tw">Twitter</a>
@@ -84,7 +84,7 @@
                         <tr>
                           <td>				
                                           
-                            <h5 class="">Contact Info:</h5>												
+                            <h5 class=""><%= I18n.t :contact_info %>:</h5>												
                             <p>
                               Phone: <strong>408.341.0600</strong><br/>
                               Email: <strong><a href="emailto:hseldon@trantor.com">hseldon@trantor.com</a></strong>

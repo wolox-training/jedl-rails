@@ -3,6 +3,15 @@ class RentCreatedMailer < ApplicationMailer
 
   def created(rent_id)
     @current_rent = Rent.find(rent_id)
-    mail(to: @current_rent.user.email, subject: 'Created rent data')
+
+    I18n.with_locale(set_locale) do
+      mail(to: @current_rent.user.email, subject: I18n.t(:subject_email))
+    end
+  end
+
+  private
+
+  def set_locale
+    @current_rent.user.try(:locale) || I18n.locale_default
   end
 end
