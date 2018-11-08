@@ -16,6 +16,7 @@ You need to install
 - ruby 2.5.3
 - rails 5.2.1
 - postgresql 10.5 or superior
+- redis
 
 ### Installing
 
@@ -47,6 +48,13 @@ To execute this project please change to the directory where you clone this repo
 
 ```
 $ rails serve
+```
+
+if you need to test the emai feature, run redis and sidekiq workers on separate consoles
+
+```
+$ redis-server
+$ bundle exec sidekiq
 ```
 
 ## Deployment

@@ -30,4 +30,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  lead: "We want you have all your rent data in your email, so we send you this information."
+  creation_date: "Creation date"
+  from: "from"
+  to: "to"
+  callout: "Please let us know if this data is incorrect."
+  contact_info: "Contact Info"
+  connect_with_us: "Connect with Us"
+  hi: "Hi"
+  book_details: "Book details"
+  subject_email: "Rent data"
