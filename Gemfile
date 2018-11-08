@@ -94,3 +94,5 @@ gem 'active_model_serializers', '~> 0.10.0', require: true
 gem 'wor-paginate'
 # Worker jobs
 gem 'sidekiq'
+# Administration frameworks
+gem 'activeadmin'
