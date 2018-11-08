@@ -14,4 +14,5 @@ class User < ApplicationRecord
 
   has_many :rents, dependent: :destroy
   has_many :books, through: :rents
+  has_many :book_suggestions, dependent: :destroy
 end
