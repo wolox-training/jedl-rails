@@ -12,6 +12,7 @@ module API
 
       def create
         rent = Rent.create!(rent_params)
+        SendMailWorker.perform_async(rent.id)
         render json: rent, serializer: Rents::CreateSerializer, status: :created
       end
 
