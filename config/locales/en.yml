@@ -40,3 +40,5 @@ en:
   hi: "Hi"
   book_details: "Book details"
   subject_email: "Rent data"
+  subject_notify_email: "End rent"
+  notify: "We know that you love the books that you rent, but it's time to return it back us. This is the book data that the rent's end date is today:"

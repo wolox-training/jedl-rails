@@ -9,3 +9,5 @@ es:
   hi: "Hola"
   book_details: "Detalles del libro"
   subject_email: "Datos del préstamo"
+  subject_notify_email: "Fin del préstamo"
+  notify: "Sabemos que te encantan los libros que alquilas, pero es hora de que nos los devuelvas. Estos son los datos del libro que la fecha de finalización de alquiler es hoy:"
