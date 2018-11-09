@@ -17,9 +17,10 @@ class OpenLibraryService
     response = self.class.get("?bibkeys=ISBN:#{isbn}&format=#{@format}&jscmd=#{@jscmd}")
 
     if !response.parsed_response.empty?
-      response["ISBN:#{isbn}"].select do |k|
+      data = response["ISBN:#{isbn}"].select do |k|
         @fields.include? k
       end
+      data.merge(isbn: isbn)
     else
       { error: 'Book not found' }
     end
