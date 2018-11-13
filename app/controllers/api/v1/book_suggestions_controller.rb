@@ -2,8 +2,7 @@ module API
   module V1
     class BookSuggestionsController < ApiController
       def create
-        book_suggestion = BookSuggestion.create!(book_suggestion_params)
-        render json: book_suggestion, status: :created
+        render json: BookSuggestion.create!(book_suggestion_params), status: :created
       end
 
       private
