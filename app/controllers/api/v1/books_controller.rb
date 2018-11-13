@@ -6,7 +6,7 @@ module API
       before_action :authenticate_user!
 
       def index
-        render_paginated Book, serializer: Books::IndexSerializer
+        render_paginated policy_scope(Book), serializer: Books::IndexSerializer
       end
 
       def show
