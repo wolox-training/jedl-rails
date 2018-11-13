@@ -1,11 +1,11 @@
-class RentCreatedMailer < ApplicationMailer
+class NotifyMailer < ApplicationMailer
   default from: 'jorge.diaz@wolox.com'
 
-  def created(rent_id)
+  def notify(rent_id)
     @current_rent = Rent.find(rent_id)
 
     I18n.with_locale(set_locale) do
-      mail(to: @current_rent.user.email, subject: I18n.t(:subject_email))
+      mail(to: @current_rent.user.email, subject: I18n.t(:subject_notify_email))
     end
   end
 
