@@ -1,4 +1,4 @@
 :schedule:
   notify_end_rent_worker:
-    cron: '0 0 9 * * * America/Buenos_Aires'   # Runs once per minute Buenos Aires
+    cron: '0 0 9 * * * America/Buenos_Aires'   # Runs at nine am Buenos Aires
     class: NotifyEndRentWorker
