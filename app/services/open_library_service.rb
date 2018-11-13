@@ -15,14 +15,11 @@ class OpenLibraryService
 
   def book_info(isbn)
     response = self.class.get("?bibkeys=ISBN:#{isbn}&format=#{@format}&jscmd=#{@jscmd}")
+    raise ActiveRecord::RecordNotFound, 'Book not found' if response.parsed_response.empty?
 
-    if !response.parsed_response.empty?
-      data = response["ISBN:#{isbn}"].select do |k|
-        @fields.include? k
-      end
-      data.merge(isbn: isbn)
-    else
-      { error: 'Book not found' }
+    data = response["ISBN:#{isbn}"].select do |k|
+      @fields.include? k
     end
+    data.merge(isbn: isbn)
   end
 end
