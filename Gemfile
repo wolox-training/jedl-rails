@@ -94,6 +94,8 @@ gem 'active_model_serializers', '~> 0.10.0', require: true
 gem 'wor-paginate'
 # Worker jobs
 gem 'sidekiq'
+# Schedule jobs
+gem 'sidekiq-scheduler'
 # Administration GUI framework
 gem 'activeadmin'
 # Authorization system
