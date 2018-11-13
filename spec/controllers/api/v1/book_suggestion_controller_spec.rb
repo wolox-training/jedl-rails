@@ -4,7 +4,7 @@ describe API::V1::BookSuggestionsController, type: :controller do
   describe 'POST #create' do
     context 'When creating a valid book suggestion' do
       let!(:new_book_suggestion_attributes) do
-        attributes_for(:book_suggestion).merge({:user_id => create(:user).id})
+        attributes_for(:book_suggestion).merge(user_id: create(:user).id)
       end
       it 'creates a new book suggestion' do
         expect do
