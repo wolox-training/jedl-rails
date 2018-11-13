@@ -98,3 +98,5 @@ gem 'sidekiq'
 gem 'activeadmin'
 # Authorization system
 gem "pundit"
+# HTTP request
+gem 'httparty'

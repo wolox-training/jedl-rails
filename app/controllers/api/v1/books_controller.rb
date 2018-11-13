@@ -13,6 +13,11 @@ module API
         book = Book.includes(:rents).find(params[:id])
         render json: book, serializer: Books::ShowSerializer
       end
+
+      def search
+        book = OpenLibraryService.new.book_info(params[:search])
+        render json: book
+      end
     end
   end
 end

@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       mount_devise_token_auth_for 'User', at: 'auth'
-      resources :books, only: %I[index show]
+
+      resources :books, only: %I[index show] do
+        collection do
+          get 'search/:search', to: 'books#search', as: 'search'
+        end
+      end
 
       resources :users, only: [] do
         resources :rents, only: %I[index create]
