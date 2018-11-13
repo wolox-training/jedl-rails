@@ -3,7 +3,9 @@ require 'rails_helper'
 describe API::V1::BookSuggestionsController, type: :controller do
   describe 'POST #create' do
     context 'When creating a valid book suggestion' do
-      let!(:new_book_suggestion_attributes) { build(:book_suggestion).attributes }
+      let!(:new_book_suggestion_attributes) do
+        attributes_for(:book_suggestion).merge({:user_id => create(:user).id})
+      end
       it 'creates a new book suggestion' do
         expect do
           post :create, params: { book_suggestion: new_book_suggestion_attributes }
@@ -21,7 +23,7 @@ end
 describe API::V1::BookSuggestionsController, type: :controller do
   describe 'POST #create' do
     context 'When creating an invalid book suggestion' do
-      let!(:new_book_suggestion_attributes) { build(:book_suggestion, user: nil).attributes }
+      let!(:new_book_suggestion_attributes) { attributes_for(:book_suggestion) }
       before do
         post :create, params: { book_suggestion: new_book_suggestion_attributes }
       end
